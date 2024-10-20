@@ -27,10 +27,9 @@ class Game {
 
     // Method to handle user interactions
     handleInteraction(letter) {
-        //const button = document.querySelector(`button:contains(${letter})`);
         const button = Array.from(document.querySelectorAll('button.key'))
             .find(btn => btn.textContent === letter);
-        //button.disabled = true; // Disable button on click
+        button.disabled = true; // Disable button on click
 
         if (!this.activePhrase.checkLetter(letter)) {
             button.classList.add('wrong'); // Incorrect guess
