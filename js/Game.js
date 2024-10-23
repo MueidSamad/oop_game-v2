@@ -67,8 +67,11 @@ class Game {
         overlay.style.display = 'flex'; // Show overlay
         const message = document.getElementById('game-over-message');
         message.textContent = didWin ? 'Congratulations! You won!' : 'Game Over! Better luck next time!';
-        overlay.classList.remove('start');
-        overlay.classList.add(didWin ? 'win' : 'lose');
+        if (didWin) {
+            overlay.className = 'win';
+        } else {
+            overlay.className = 'lose';
+        }
     }
 
     // Method to reset the gameboard
